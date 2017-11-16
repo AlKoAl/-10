@@ -1,0 +1,11 @@
+Lines: 10		 gi|31563518|ref|NP_852610.1| microtubule-associated proteins 1A/1B light chain 3A isoform b [Homo sapiens]
+agcgagagcggagacgagcg
+cccgattac
+acgataca
+AGGAGGGAAGAGCA
+GCACGCGTGCCAGCTGCG
+GGTCAGG
+cccatgaaca
+TGTGGG
+TGCTGGTAACCCTCGCCCGGCACTA
+aaacactga

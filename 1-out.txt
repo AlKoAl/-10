@@ -1,0 +1,8 @@
+number of having scholarships: 1
+having scholarships: S5
+number of expelled: 2
+expelled: S2 S4
+number of debtors: 3
+debtors: S1 S3 S6
+number of others: 2
+others: S7 S8
