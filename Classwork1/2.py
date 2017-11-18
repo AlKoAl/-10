@@ -3,7 +3,7 @@ a = 1
 b = 1
 c = a
 i = 0
-if n > 2:
+if n > 1:
   while i+3 < 2*n+1:
     c = a
     a = b+c
