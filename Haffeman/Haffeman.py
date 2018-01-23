@@ -16,35 +16,35 @@ def func_keys_min(x):
     global s
     keys1 = []
     for key in x.keys():
-        keys1.append(key)
-    if keys1[0] in a:
+        keys1.append(key)  # достаём ключ словаря
+    if keys1[0] in a:  # если такой узел есть
         keys2 = []
         for key in a[keys1[0]].keys():
-            keys2.append(key)  # нашёл ключи ключа полученного словаря
-        if len(keys2[0]) >= len(keys2[1]):  # сравниваю значения ключей
+            keys2.append(key)  # находим в узле значения 
+        if len(keys2[0]) >= len(keys2[1]):  # сравниваем количество листьев
             func_keys_max({keys2[0]: (x[keys1[0]] + '1')})
             func_keys_min({keys2[1]: (x[keys1[0]] + '0')})
         else:
             func_keys_max({keys2[1]: (x[keys1[0]] + '1')})
             func_keys_min({keys2[0]: (x[keys1[0]] + '0')})
-    else:
+    else:  # значит это лист
         s.update(x)
 def func_keys_max(x):
     global s
     keys1 = []
     for key in x.keys():
-        keys1.append(key)
-    if keys1[0] in a:
+        keys1.append(key)  # достаём ключ словаря
+    if keys1[0] in a:  # если такой узел есть
         keys2 = []
         for key in a[keys1[0]].keys():
-            keys2.append(key)  # нашёл ключи ключа полученного словаря
-        if len(keys2[0]) >= len(keys2[1]):  # сравниваю значения ключей
+            keys2.append(key)  # находим в узле значения 
+        if len(keys2[0]) >= len(keys2[1]):  # сравниваем количество листьев
             func_keys_max({keys2[0]: (x[keys1[0]] + '1')})
             func_keys_min({keys2[1]: (x[keys1[0]] + '0')})
         else:
             func_keys_max({keys2[1]: (x[keys1[0]] + '1')})
             func_keys_min({keys2[0]: (x[keys1[0]] + '0')})
-    else:
+    else:  # значит это лист
         s.update(x)
 def func(x):
     global a  # для изменения а
@@ -73,25 +73,25 @@ def func(x):
 func(d)
 new_key = ''
 for key in a.keys():
-    if len(key) > len(new_key):              # нашёл самый длинный узел(корень)
+    if len(key) > len(new_key):              # нашёл самый длинный узел (корень)
         new_key = key
 keys = []
 for key in a[new_key].keys():
-    keys.append(key)
-if len(keys[0]) >= len(keys[1]):
-    func_keys_max({keys[0]: '1'})
+    keys.append(key)       # нашёл первые две ветви
+if len(keys[0]) >= len(keys[1]):   # присваиваем большей по количеству листьев ветви значение 1 и передаём её функции.
+    func_keys_max({keys[0]: '1'})  # меньшей по количесву листтьев присваиваем значение 0 и передаём её функции.
     func_keys_min({keys[1]: '0'})
 else:
     func_keys_max({keys[1]: '1'})
     func_keys_min({keys[0]: '0'})
 my_file = open('text-in.txt')
-my_out_file = open('text-out.txt', 'w')
+my_out_file = open('text-out.txt', 'w')  #открываем на запись файл, в котором будет закодированная последовательность
 for line in my_file:
-    for i in line:
+    for i in line:  # считываем первый симол
         for key in s.keys():
             if i == key:
-                my_out_file.write(str(s[key]))
+                my_out_file.write(str(s[key])) # записываем его код в файл
                 break
-my_out_file = open('text-out.txt', 'a')
+my_out_file = open('text-out.txt', 'a') # дозаписываем словарь {символ: его код}
 my_out_file.write('\n')
 my_out_file.write(str(s))
