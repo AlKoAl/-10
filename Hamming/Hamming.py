@@ -75,7 +75,6 @@ while 2**i <= len(string):
 sum = 0
 for i in range(len(numbers)):
     sum += 2**i*numbers[i]
-    print(sum)
 print("Ошибочный бит:", sum)
 if sum == 0:
     error = error
