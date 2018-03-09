@@ -84,6 +84,6 @@ else:
     elif error[sum - 1] == '0':
         error = error[: sum - 1] + '1' + error[sum:]
 error = error[2:]
-for i in (1, k + 1):
-    error = error[:2**i - 1] + error[2**i:]
+for i in range(k - 1, 1, -1):
+    error = error[:(2**i - 3)] + error[(2**i - 2):]
 print(error)
