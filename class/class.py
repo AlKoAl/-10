@@ -23,6 +23,8 @@ class Patient:
                     time = input('Введите желаемое время приёма:')
                     if time in j.attending_physicians[our_doctor].schedule:
                         doc[j.attending_physicians[our_doctor]] = time
+                    else:
+                        doc[j.attending_physicians[our_doctor]] = 'Нет такого времени'
 
 
 
